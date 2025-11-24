@@ -1,0 +1,142 @@
+# GitHub Copilot
+# Comprehensive .gitignore for a cloud repository (Node, Terraform, Docker, common IDEs/OS, etc.)
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log.*
+
+# Runtime / environment
+.env
+.env.local
+.env.*.local
+.env.test
+.env.production.local
+# keep .env.example for documentation
+
+# Node / JavaScript
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+.pnpm-debug.log
+.pnp.*
+.yarn-integrity
+.yarn/*
+!.yarn/releases
+.npm
+.eslintcache
+.node_repl_history
+*.tgz
+
+# Build output / bundlers / frameworks
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+.cache/
+public/
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb
+# Gatsby
+.cache/
+public/
+
+# Package manager artifacts
+package-lock.json        # (uncomment if you want lockfile ignored; typically you should commit it)
+yarn.lock                # (uncomment if you want lockfile ignored; typically you should commit it)
+.pnpm-store/
+
+# Tests / coverage
+coverage/
+.nyc_output/
+coverage-final.json
+jest*.json
+.vitest/
+
+# IDEs / editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*~
+*.tmp
+
+# OS temporary files
+*.pid
+*.seed
+*.pid.lock
+pids/
+tmp/
+temp/
+
+# Docker
+docker-compose.override.yml
+# local compose files
+docker-compose.*.local.yml
+.docker/
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform.lock.hcl
+
+# Python (if present)
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.eggs/
+venv/
+.venv/
+env/
+ENV/
+pip-wheel-metadata/
+.pytest_cache/
+
+# Misc binaries & secrets
+*.pem
+*.key
+*.crt
+*.pfx
+*.jks
+secrets.yml
+*.env.*.bak
+
+# Archives and packages
+*.zip
+*.tar.gz
+*.rar
+
+# Generated files and caches
+.cache/
+logs/
+coverage/
+report/
+*.log
+
+# Editor config and project metadata
+*.iml
+project.lock.json
+
+# Keep examples and docs in repo (explicit)
+!/.env.example
+!/.env.sample
