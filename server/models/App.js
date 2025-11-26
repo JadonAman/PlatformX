@@ -64,6 +64,58 @@ const appSchema = new mongoose.Schema({
   requestCount: {
     type: Number,
     default: 0
+  },
+
+  // Deployment method: zip-upload, git-import, manual
+  deploymentMethod: {
+    type: String,
+    enum: ['zip-upload', 'git-import', 'manual', 'unknown'],
+    default: 'unknown'
+  },
+
+  // Git repository URL (if deployed via git)
+  repoUrl: {
+    type: String,
+    default: null
+  },
+
+  // Git branch (if deployed via git)
+  repoBranch: {
+    type: String,
+    default: null
+  },
+
+  // Entry file path (relative to app root)
+  entryFile: {
+    type: String,
+    default: 'server.js'
+  },
+
+  // App type: backend, frontend, or fullstack
+  appType: {
+    type: String,
+    enum: ['backend', 'frontend', 'fullstack'],
+    default: 'backend'
+  },
+
+  // Build output directory for frontend apps (e.g., 'dist', 'build', 'public')
+  buildDir: {
+    type: String,
+    default: null
+  },
+
+  // Backend API proxy configuration for frontend apps
+  // Format: { "/api": "http://backend.localhost:5000" }
+  proxyConfig: {
+    type: Map,
+    of: String,
+    default: null
+  },
+
+  // Webhook URL for deployment notifications
+  webhookUrl: {
+    type: String,
+    default: null
   }
 }, {
   timestamps: false // We handle timestamps manually for more control

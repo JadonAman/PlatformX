@@ -65,152 +65,167 @@ function Dashboard() {
       <div className="px-8 pb-8">
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-600 text-sm">Total Apps</p>
-                <p className="text-3xl font-bold text-gray-900 mt-2">
-                  {stats.totalApps}
-                </p>
-              </div>
-              <div className="text-4xl">📦</div>
+          <div className="group relative overflow-hidden bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-medium hover:shadow-strong p-6 transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12"></div>
+            <div className="relative">
+              <p className="text-blue-100 text-sm font-medium mb-2">Total Apps</p>
+              <p className="text-4xl font-bold text-white mb-1">
+                {stats.totalApps}
+              </p>
+              <div className="text-4xl absolute top-0 right-0 opacity-20 group-hover:opacity-30 transition-opacity">📦</div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-600 text-sm">Active Apps</p>
-                <p className="text-3xl font-bold text-green-600 mt-2">
-                  {stats.activeApps}
-                </p>
-              </div>
-              <div className="text-4xl">✅</div>
+          <div className="group relative overflow-hidden bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-medium hover:shadow-strong p-6 transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12"></div>
+            <div className="relative">
+              <p className="text-green-100 text-sm font-medium mb-2">Active Apps</p>
+              <p className="text-4xl font-bold text-white mb-1">
+                {stats.activeApps}
+              </p>
+              <div className="text-4xl absolute top-0 right-0 opacity-20 group-hover:opacity-30 transition-opacity">✅</div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-600 text-sm">Total Requests</p>
-                <p className="text-3xl font-bold text-blue-600 mt-2">
-                  {stats.totalRequests.toLocaleString()}
-                </p>
-              </div>
-              <div className="text-4xl">📊</div>
+          <div className="group relative overflow-hidden bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl shadow-medium hover:shadow-strong p-6 transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12"></div>
+            <div className="relative">
+              <p className="text-purple-100 text-sm font-medium mb-2">Total Requests</p>
+              <p className="text-4xl font-bold text-white mb-1">
+                {stats.totalRequests.toLocaleString()}
+              </p>
+              <div className="text-4xl absolute top-0 right-0 opacity-20 group-hover:opacity-30 transition-opacity">📊</div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-600 text-sm">Cached Apps</p>
-                <p className="text-3xl font-bold text-purple-600 mt-2">
-                  {stats.cachedApps}
-                </p>
-              </div>
-              <div className="text-4xl">🗂️</div>
+          <div className="group relative overflow-hidden bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl shadow-medium hover:shadow-strong p-6 transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12"></div>
+            <div className="relative">
+              <p className="text-indigo-100 text-sm font-medium mb-2">Cached Apps</p>
+              <p className="text-4xl font-bold text-white mb-1">
+                {stats.cachedApps}
+              </p>
+              <div className="text-4xl absolute top-0 right-0 opacity-20 group-hover:opacity-30 transition-opacity">🗂️</div>
             </div>
           </div>
         </div>
 
         {/* Quick Actions */}
         <div className="mb-8">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Quick Actions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <h2 className="text-2xl font-bold text-gray-900 mb-5 flex items-center gap-2">
+            <span className="text-2xl">⚡</span>
+            Quick Actions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link
               to="/upload"
-              className="bg-blue-600 text-white rounded-lg p-6 hover:bg-blue-700 transition-colors"
+              className="group relative overflow-hidden bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl p-7 hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-medium hover:shadow-strong hover:-translate-y-1"
             >
-              <div className="text-3xl mb-2">⬆️</div>
-              <h3 className="font-bold text-lg">Upload New App</h3>
-              <p className="text-blue-100 text-sm mt-1">
-                Deploy a new Node.js application
-              </p>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+              <div className="relative">
+                <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300">⬆️</div>
+                <h3 className="font-bold text-xl mb-2">Upload New App</h3>
+                <p className="text-blue-100 text-sm">
+                  Deploy a new Node.js application
+                </p>
+              </div>
             </Link>
 
             <Link
               to="/apps"
-              className="bg-gray-800 text-white rounded-lg p-6 hover:bg-gray-900 transition-colors"
+              className="group relative overflow-hidden bg-gradient-to-br from-gray-700 to-gray-800 text-white rounded-2xl p-7 hover:from-gray-800 hover:to-gray-900 transition-all duration-300 shadow-medium hover:shadow-strong hover:-translate-y-1"
             >
-              <div className="text-3xl mb-2">📦</div>
-              <h3 className="font-bold text-lg">Manage Apps</h3>
-              <p className="text-gray-300 text-sm mt-1">
-                View and manage all deployed apps
-              </p>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+              <div className="relative">
+                <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300">📦</div>
+                <h3 className="font-bold text-xl mb-2">Manage Apps</h3>
+                <p className="text-gray-300 text-sm">
+                  View and manage all deployed apps
+                </p>
+              </div>
             </Link>
 
             <Link
               to="/cached"
-              className="bg-purple-600 text-white rounded-lg p-6 hover:bg-purple-700 transition-colors"
+              className="group relative overflow-hidden bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl p-7 hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-medium hover:shadow-strong hover:-translate-y-1"
             >
-              <div className="text-3xl mb-2">🗂️</div>
-              <h3 className="font-bold text-lg">Cached Apps</h3>
-              <p className="text-purple-100 text-sm mt-1">
-                View currently loaded apps
-              </p>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+              <div className="relative">
+                <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300">🗂️</div>
+                <h3 className="font-bold text-xl mb-2">Cached Apps</h3>
+                <p className="text-purple-100 text-sm">
+                  View currently loaded apps
+                </p>
+              </div>
             </Link>
           </div>
         </div>
 
         {/* Recent Apps */}
         <div>
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-bold text-gray-900">Recent Apps</h2>
-            <Link to="/apps" className="text-blue-600 hover:text-blue-700 text-sm">
-              View all →
+          <div className="flex justify-between items-center mb-5">
+            <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+              <span className="text-2xl">🕐</span>
+              Recent Apps
+            </h2>
+            <Link to="/apps" className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 group">
+              View all 
+              <span className="transform group-hover:translate-x-1 transition-transform">→</span>
             </Link>
           </div>
 
           {recentApps.length === 0 ? (
-            <div className="bg-white rounded-lg border border-gray-200 p-12 text-center">
-              <p className="text-gray-600">No apps deployed yet</p>
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl border-2 border-dashed border-gray-300 p-12 text-center">
+              <div className="text-6xl mb-4 opacity-50">📦</div>
+              <p className="text-gray-600 text-lg font-medium mb-2">No apps deployed yet</p>
+              <p className="text-gray-500 text-sm mb-4">Get started by uploading your first application</p>
               <Link
                 to="/upload"
-                className="inline-block mt-4 text-blue-600 hover:text-blue-700"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 font-medium shadow-md hover:shadow-lg"
               >
-                Upload your first app →
+                <span>⬆️</span>
+                Upload your first app
               </Link>
             </div>
           ) : (
-            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+            <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-soft">
               <table className="min-w-full">
-                <thead className="bg-gray-50">
+                <thead className="bg-gradient-to-r from-gray-50 to-gray-100">
                   <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                    <th className="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">
                       Name
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                    <th className="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">
                       Slug
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                    <th className="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">
                       Status
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                    <th className="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">
                       Requests
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                    <th className="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">
                       Created
                     </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {recentApps.map((app) => (
-                    <tr key={app.slug} className="hover:bg-gray-50">
+                    <tr key={app.slug} className="hover:bg-blue-50/50 transition-colors duration-150">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <Link
                           to={`/apps/${app.slug}`}
-                          className="text-blue-600 hover:text-blue-800 font-medium"
+                          className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
                         >
                           {app.name}
                         </Link>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 font-mono">
                         {app.slug}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span
-                          className={`px-2 py-1 text-xs rounded-full ${
+                          className={`inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full ${
                             app.status === 'active'
                               ? 'bg-green-100 text-green-800'
                               : app.status === 'disabled'
@@ -221,7 +236,7 @@ function Dashboard() {
                           {app.status}
                         </span>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">
                         {app.requestCount.toLocaleString()}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">

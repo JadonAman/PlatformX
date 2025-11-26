@@ -1,21 +1,40 @@
 {
-  "name": "server",
+  "name": "platformx-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Multi-tenant Node.js hosting platform with lazy loading and subdomain routing",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js",
+    "prod": "NODE_ENV=production node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "platformx",
+    "multi-tenant",
+    "hosting",
+    "node",
+    "express"
+  ],
+  "author": "PlatformX Team",
+  "license": "MIT",
   "dependencies": {
     "adm-zip": "^0.5.16",
+    "axios": "^1.13.2",
+    "bcryptjs": "^3.0.3",
     "chokidar": "^4.0.3",
+    "compression": "^1.8.1",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "express-validator": "^7.3.1",
+    "helmet": "^8.1.0",
+    "http-proxy-middleware": "^3.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.20.0",
     "mongoose": "^8.20.0",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "validator": "^13.15.23"
   }
 }

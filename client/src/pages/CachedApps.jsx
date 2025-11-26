@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import { platformAPI } from '../services/api';
+import { useDialog } from '../contexts/DialogContext';
 
 function CachedApps() {
+  const { confirm, toast } = useDialog();
   const [cachedApps, setCachedApps] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -26,23 +28,28 @@ function CachedApps() {
   };
 
   const handleUnload = async (appName) => {
-    if (!confirm(`Unload "${appName}" from memory?`)) return;
+    const confirmed = await confirm(`Unload "${appName}" from memory?`, {
+      title: 'Unload App',
+      type: 'warning'
+    });
+    if (!confirmed) return;
 
     try {
       await platformAPI.unloadApp(appName);
+      toast.success('App unloaded successfully!');
       fetchCachedApps();
     } catch (err) {
-      alert(err.response?.data?.error || 'Failed to unload app');
+      toast.error(err.response?.data?.error || 'Failed to unload app');
     }
   };
 
   const handleUnloadIdle = async () => {
     try {
       const response = await platformAPI.unloadIdleApps(idleThreshold);
-      alert(`Unloaded ${response.data.unloaded} idle apps (idle > ${idleThreshold} min)`);
+      toast.success(`Unloaded ${response.data.unloaded} idle apps (idle > ${idleThreshold} min)`);
       fetchCachedApps();
     } catch (err) {
-      alert(err.response?.data?.error || 'Failed to unload idle apps');
+      toast.error(err.response?.data?.error || 'Failed to unload idle apps');
     }
   };
 

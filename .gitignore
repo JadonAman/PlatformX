@@ -139,4 +139,15 @@ project.lock.json
 
 # Keep examples and docs in repo (explicit)
 !/.env.example
+
+# Exclude uploaded/deployed apps (not part of source code)
+server/apps/*
+!server/apps/template/
+
+# Exclude documentation files (generated)
+*.md
+!README.md
+
+# Keep issues tracking
+!issues.txt
 !/.env.sample
